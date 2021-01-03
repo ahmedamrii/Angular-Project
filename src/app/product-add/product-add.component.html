@@ -1,0 +1,69 @@
+<div class="card">
+    <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+    <div class="form-group">
+    <label class="col-md-4">Book Title</label>
+    <input type="text" class="form-control"
+    formControlName="ProductName"
+   
+    #ProductName />
+</div>
+<div *ngIf="angForm.controls['ProductName'].invalid && (angForm.controls['ProductName'].dirty || angForm.controls['ProductName'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['ProductName'].errors!.required">
+    Book Title is required.
+
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Book Author </label>
+<input type="text"
+class="form-control"
+            formControlName="ProductDescription"
+           
+            #ProductDescription />
+</div>
+<div *ngIf="angForm.controls['ProductDescription'].invalid && (angForm.controls['ProductDescription'].dirty || angForm.controls['ProductDescription'].touched)
+" class="alert alert-danger">
+<div *ngIf="angForm.controls['ProductDescription'].errors!.required">
+    Book Author is required.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Book Price</label>
+<input type="text" class="form-control"
+formControlName="ProductPrice"
+
+#ProductPrice
+/>
+</div>
+<div *ngIf="angForm.controls['ProductPrice'].invalid && (angForm.controls['ProductPrice'].dirty || angForm.controls['ProductPrice'].touched)" class="alert ale
+rt-danger">
+<div *ngIf="angForm.controls['ProductPrice'].errors!.required">
+    Book Price is required.
+</div>
+</div>
+<div class="form-group">
+    <label class="col-md-4">Release date </label>
+    <input type="date"
+    class="form-control"
+                formControlName="releasedate"
+               
+                #releasedate />
+    </div>
+    <div *ngIf="angForm.controls['releasedate'].invalid && (angForm.controls['releasedate'].dirty || angForm.controls['releasedate'].touched)
+    " class="alert alert-danger">
+    <div *ngIf="angForm.controls['releasedate'].errors!.required">
+        Release date is required.
+    </div>
+    </div>
+<div class="form-group">
+    <button (click) = "addProduct()" type="submit" class="btn btn-primary"
+     >
+    Add Book
+    </button>
+   </div>
+ </form>
+ </div>
+</div>
+
+
